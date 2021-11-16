@@ -31,6 +31,16 @@ $(document).ready(function() {
     $('.hello-display').fadeIn('slow');
     $('.menu-hello').removeClass("mob-hellomenu");
   });
+  $('.white-bg img').on('click', function(){
+    var src = $(this).attr('src');  
+    $('#destination').children('img').attr('src', src);
+    $('.product-display').addClass("show");
+});
+  $('.product-img img').on('click', function(){
+    var src = $(this).attr('src');  
+    $('#destination').children('img').attr('src', src);
+    $('.product-display').addClass("show");
+});
   
   });
 
