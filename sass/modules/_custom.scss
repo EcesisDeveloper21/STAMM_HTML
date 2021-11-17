@@ -202,7 +202,7 @@ PRELOADER STYLES
       height: 217px;
       position: relative;
      
-      @media (max-width: 1200px) {
+      @media (max-width: 1600px) {
         width: 727px;
         height: 127px;
       }
@@ -219,11 +219,8 @@ PRELOADER STYLES
         position: absolute;
         bottom: 0;
         left: 0;
-        @media (max-width: 1200px) {
-          width: 857px;
-          height: 157px;
-        }
-        @media (max-width: 991px) {
+        
+        @media (max-width: 1600px) {
           width: 727px;
           height: 127px;
           
@@ -343,7 +340,7 @@ PRELOADER STYLES
     background-size: cover;
     background-repeat: no-repeat;
   
-    @media (max-width:1200px) {
+    @media (max-width:1600px) {
       width: 727px;
       height: 127px;
       
@@ -415,8 +412,18 @@ PRELOADER STYLES
     height: 400px;
     top: 4%;
     left: 16.5%;
+    @media (max-width: 1900px) {
+      height:175px;
+      width: 25%;
+      left: 20%;
+      top: 10%;
+
+    }
     @media (max-width: 1600px) {
-      height:355px;
+      top: 25%;
+    }
+    @media (max-width: 1440px) {
+      top: 15%;
     }
     @media (max-width: 1200px) {
      width: 23%;
@@ -434,7 +441,7 @@ PRELOADER STYLES
       height: 400px;
       object-fit: contain;
       @media (max-width: 1600px) {
-        height:355px;
+        height:175px;
       }
       @media (max-width: 767px) {
        
@@ -451,7 +458,10 @@ PRELOADER STYLES
     height:55vh;
     top: 15%;
     left: 22.5%;
-    @media (max-width: 1368px) {
+    @media (max-width: 1600px) {
+      top: 20%;
+    }
+    @media (max-width: 1300px) {
       height: 55vh;
       top: 15%;
     }
@@ -1143,6 +1153,9 @@ left: 18%;
       .address {
        position: absolute;
        bottom: 100px;
+       @media (max-width:1600px) {
+         bottom: 30px;
+       }
        @media (max-width: 991px) {
         padding-right: 50px;
       }
@@ -1324,6 +1337,9 @@ left: 18%;
   .address {
     position: absolute;
        bottom: 100px;
+       @media (max-width:1600px) {
+        bottom: 30px;
+      }
        @media (max-width: 991px) {
          padding-right: 50px;
        }
