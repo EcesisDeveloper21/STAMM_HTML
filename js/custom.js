@@ -58,4 +58,31 @@ $(".loaded").animate({
 setTimeout(function(){
   $('.preloader-wrap').fadeOut(300);
 }, time);
-  
+$(document).ready(function(){
+  $('input[type="checkbox"]').click(function(){
+      if($(this).prop("checked") == true){
+        $(".button-class").html("add to cart");
+        $($(this).parent().parent().parent()).addClass("active")
+        $($(this).parent().parent().parent().siblings()).removeClass("active")
+        $($(this).parent().parent().parent().parent().siblings().children()).removeClass("active")
+        $(".button-class").mouseover(function() {
+ 
+          $(".button-class").html("add to cart");
+      });
+      }
+      else if($(this).prop("checked") == false){
+        $($(this).parent().parent().parent()).removeClass("active")
+        $(".button-class").mouseover(function() {
+ 
+              $(".button-class").html("please select size");
+          });
+      }
+  });
+});
+$(document).on('click', '.ck-button input[type="checkbox"]', function() {      
+  $('.ck-button input[type="checkbox"]').not(this).prop('checked', false);      
+});
+$(".button-class").mouseover(function() {
+ 
+  $(".button-class").html("please select size");
+});
