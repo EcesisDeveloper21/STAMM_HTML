@@ -47,12 +47,63 @@ $('.icons').click(function(){
   $('.product-site').addClass("popup");
   $('.image-class').addClass("popup");
 });
+$('.icon-details-mob').click(function(e){ 
+  e.preventDefault(); 
+  $('.details-popup-mob').addClass("show");
+  $('.product-site').addClass("popup");
+  $('.image-class').addClass("popup");
+  $('.side-menu').addClass("popup");
+  $('.side-navmenu').addClass("popup");
+});
+$('.close-popup-mob').click(function(e){ 
+  e.preventDefault();
+   $('.details-popup-mob').removeClass("show");
+   $('.product-site').removeClass("popup");
+   $('.image-class').removeClass("popup");
+   $('.side-menu').removeClass("popup");
+   $('.side-navmenu').removeClass("popup");
+ });
+ $('.arrow-right').click(function(e){ 
+  e.preventDefault(); 
+  $(this).hide();
+  $('.arrow-left').show();
+  $('.content.material').removeClass("hide");
+  $('.content.detail').addClass("hide");
+  $('.price-detail').addClass("hide");
+  
+});
+ $('.arrow-left').click(function(e){ 
+  e.preventDefault(); 
+  $(this).hide();
+  $('.arrow-right').show();
+  $('.content.detail').removeClass("hide");
+  $('.content.material').addClass("hide");
+  $('.price-detail').removeClass("hide");
+  
+});
 $('.close-popup').click(function(e){ 
  e.preventDefault(); 
   $('.details-popup').removeClass("show");
   $('.product-site').removeClass("popup");
   $('.image-class').removeClass("popup");
 });
+$('.select-size').click(function(e){ 
+  e.preventDefault();
+  $('.product-view-details').addClass("show");
+  $('.product-site').addClass("popup");
+  $('.image-class').addClass("popup");
+  $('.side-menu').addClass("popup");
+  $('.side-navmenu').addClass("popup");
+});
+
+$('.close-product-size').click(function(e){ 
+  e.preventDefault();
+   $('.product-view-details').removeClass("show");
+   $('.product-site').removeClass("popup");
+   $('.image-class').removeClass("popup");
+   $('.side-menu').removeClass("popup");
+   $('.side-navmenu').removeClass("popup");
+ });
   });
 
   // Loader
@@ -71,20 +122,29 @@ setTimeout(function(){
 $(document).ready(function(){
   $('input[type="checkbox"]').click(function(){
       if($(this).prop("checked") == true){
-        $(".button-class").html("add to cart");
+        $(".add-cart").html("add to cart");
+        $(".add-cartmob").html("add to cart");
         $($(this).parent().parent().parent()).addClass("active")
         $($(this).parent().parent().parent().siblings()).removeClass("active")
         $($(this).parent().parent().parent().parent().siblings().children()).removeClass("active")
-        $(".button-class").mouseover(function() {
+        $(".add-cart").mouseover(function() {
  
-          $(".button-class").html("add to cart");
+          $(".add-cart").html("add to cart");
+      });
+        $(".add-cartmob").mouseover(function() {
+ 
+          $(".add-cartmob").html("add to cart");
       });
       }
       else if($(this).prop("checked") == false){
         $($(this).parent().parent().parent()).removeClass("active")
-        $(".button-class").mouseover(function() {
+        $(".add-cart").mouseover(function() {
  
-              $(".button-class").html("please select size");
+              $(".add-cart").html("please select size");
+          });
+        $(".add-cartmob").mouseover(function() {
+ 
+              $(".add-cartmob").html("please select size");
           });
       }
   });
@@ -92,9 +152,13 @@ $(document).ready(function(){
 $(document).on('click', '.ck-button input[type="checkbox"]', function() {      
   $('.ck-button input[type="checkbox"]').not(this).prop('checked', false);      
 });
-$(".button-class").mouseover(function() {
+$(".add-cart").mouseover(function() {
  
-  $(".button-class").html("please select size");
+  $(".add-cart").html("please select size");
+});
+$(".add-cartmob").mouseover(function() {
+ 
+  $(".add-cartmob").html("please select size");
 });
 $(window).scroll(function() {
   

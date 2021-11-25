@@ -150,7 +150,10 @@ p {
   text-align: center;
  
   cursor: pointer;
-
+  
+  @media (max-width: 767px)  {
+    height: 40px;
+  }
 }
   /* Cookies */
   .alert-warning {
@@ -431,7 +434,7 @@ PRELOADER STYLES
         bottom: 0;
         left:30%;
         border-left: 1px solid #000000;
-        height: 25vh;
+        height: 24vh;
         z-index: 1;
         
       }
@@ -445,7 +448,7 @@ PRELOADER STYLES
         bottom: 0;
         right:30%;
         border-right: 1px solid #000000;
-        height: 25vh;
+        height: 24vh;
         z-index: 1;
         
       }
@@ -805,6 +808,10 @@ left: 18%;
       bottom: 100px;
       right: 10px;
       z-index: 4;
+      &.popup {
+        opacity: 0.4;
+        z-index: 1;
+      }
        }
     ul {
       text-align: right;
@@ -1093,6 +1100,10 @@ left: 18%;
      transform: none;
      bottom: 70px;
      right: 10px;
+     &.popup {
+      opacity: 0.4;
+      z-index: 1;
+    }
       }
     @media (max-width: 767px) {
       .hide-mob {
@@ -1719,14 +1730,63 @@ box-shadow: inset -2px -2px 0px #000000, inset -3px -3px 0px #808080, inset 1px 
     @media (max-width: 767px) {
       bottom: 200px;
     }
+    &.add-cart {
+      @media (max-width: 767px) {
+        display: none;
+      }
+    }
+    &.select-size {
+      display: none;
+      @media (max-width: 767px) {
+        display: block;
+        padding: 5px 55px;
+        bottom: 27vh;
+      }
+      @media (max-width: 340px) {
+       
+        padding: 5px 45px;
+      }
+    }
+  }
+  .icon-details-mob {
+      display: none;
+      @media (max-width: 767px) {
+        display: block;
+        position: fixed;
+        bottom: 35vh;
+        right: 15px;
+        
+      }
+      img {
+        max-width: 60px;
+        &.icon-hover {
+          position: absolute;
+          right: 0;
+          opacity: 0;
+        }
+      }
+      &:hover {
+        img {
+          &.icon-notover {
+            opacity: 0;
+          }
+          &.icon-hover {
+            opacity: 1;
+          }
+        }
+      }
   }
   .download {
     position: fixed;
     bottom: 10px;
     left: 22px;
+    
     img {
       max-width: 42px;
       height: auto;
+      @media (max-width: 767px) {
+        max-width: 27px;
+      }
     }
   }
   .image-class {
@@ -1749,6 +1809,10 @@ box-shadow: inset -2px -2px 0px #000000, inset -3px -3px 0px #808080, inset 1px 
       position: absolute;
       left: 24px;
       bottom: 10px;
+      @media (max-width: 767px) {
+        left: 12px;
+        bottom: 7px;
+      }
     }
   }
  
@@ -1766,7 +1830,9 @@ border: 1.25px solid #000000;
 box-sizing: border-box;
 
 width: 80%;
-
+@media (max-width: 767px) {
+  display: none;
+}
 .close-popup {
   position: absolute;
   top: 11px;
@@ -1818,19 +1884,167 @@ height: 300px;
   }
 
 }
+
+
+
+.details-popup-mob {
+  display: none;
+  &.show {
+    @media (max-width: 767px) {
+      display: block;
+    }
+    
+    position: fixed;
+   bottom: 24vh;
+    left: 25px;
+    background: #FFFFFF;
+border: 1px solid #000000;
+box-sizing: border-box;
+width: 85%;
+
+.close-popup-mob {
+  position: absolute;
+  top: 7px;
+  right: 7px;
+  img {
+    max-width: 20px;
+  }
+  
+}
+.arrow-right {
+  display: flex;
+  align-items: center;
+  position: absolute;
+  bottom: 2px;
+  right: 7px;
+  span {
+    color: $text-dark;
+    font-size: 9px;
+    line-height: 9px;
+  }
+}
+.arrow-left {
+  display: flex;
+  align-items: center;
+  position: absolute;
+  bottom: 2px;
+  left: 37px;
+  display: none;
+  span {
+    color: $text-dark;
+    font-size: 9px;
+    line-height: 9px;
+    margin-right: 20px;
+  }
+}
+.decription {
+ 
+padding: 45px 35px;
+
+&::-webkit-scrollbar {
+  width: 0;
+}
+&::-webkit-scrollbar-track {
+  background: transparent;
+}
+&::-webkit-scrollbar-thumb {
+  background-color: transparent;
+  border-radius:0;
+}
+.price-detail {
+  &.hide {
+    display: none;
+  }
+}
+.name-price {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+  p {
+    font-size: 11px;
+    line-height: 11px;
+    &.name {
+      text-transform: uppercase;
+    }
+   
+  }
+
+}
+}
+.content {
+  margin-bottom: 45px;
+  &:last-of-type {
+    margin-bottom: 0;
+  }
+  img {
+    &.icon {
+      max-width:60px;
+     margin: 0 auto;
+     position: relative;
+     left: 50%;
+     transform: translateX(-50%);
+    }
+   
+  }
+  p {
+    font-size: 11px;
+    line-height: 11px;
+    &.heading {
+      text-transform: uppercase;
+    }
+  }
+  &.hide {
+    display: none;
+  }
+}
+  }
+
+}
 .product-view-details {
   position: absolute;
   width: 33%;
   left:0;
   top: 20%;
   @media (max-width: 767px) {
-    display: none;
+   width: 100%;
+   z-index: 2;
+   top: auto;
+   bottom: 72vh;
+   display: none;
+   &.show {
+    display: block;
   }
+  }
+
  .decription{
    position: absolute;
    left: 50%;
    transform: translateX(-50%);
    width: 70%;
+
+   @media (max-width: 767px) {
+     position: absolute;
+     left: 25px;
+     transform: none;
+     width: 87.5%;
+     padding: 46px 35px 20px 35px;
+     background: #FFFFFF;
+    border: 1px solid #000000;
+    box-sizing: border-box;
+   }
+   .close-product-size {
+     display: none;
+     @media (max-width: 767px) {
+       display: block;
+       position: absolute;
+       top: 7px;
+       right: 7px;
+       img {
+         max-width: 20px;
+       }
+     }
+   }
   .name-price {
     display: flex;
     width: 100%;
@@ -1844,10 +2058,33 @@ height: 300px;
     }
 
   }
+  p {
+    &.model-p {
+      @media (max-width: 767px)  {
+        font-size: 8px;
+        line-height: 8px;
+      }
+    }
+  }
+  .add-cartmob {
+    display: none;
+    @media (max-width: 767px) {
+      display: block;
+      position: relative;
+      left: 50%;
+      bottom: 0;
+      transform: translateX(-50%);
+      padding: 5px 54px;
+    }
+  }
   table {
    
     border-collapse: collapse;
     margin-bottom: 15px;
+    @media (max-width: 767px) {
+      margin-top: 30px;
+      margin-bottom: 7px;
+    }
   }
   
   td {
@@ -1858,6 +2095,10 @@ height: 300px;
     width: 107px;
     height: 68px;
     cursor: pointer;
+    @media (max-width: 767px)  {
+      width: 63px;
+      height: 40px;
+    }
     &:first-of-type {
       border-left:1px solid #000000; 
     }
@@ -1890,6 +2131,9 @@ height: 300px;
     }
     &.detail{
       position: relative;
+      @media (max-width: 767px)  {
+        display: none;
+      }
      .icons {
      
        img {
