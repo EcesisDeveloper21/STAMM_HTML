@@ -2239,6 +2239,43 @@ padding: 45px 35px;
 
  
 }
+/*High and low Page Css */
+.hig-low {
+  position: absolute;
+ 
+  top: 68px;
+  left: 20px;
+  height:75vh;
+  overflow-x: hidden;
+  overflow-y: auto;
+  @media (max-width: 1200px) {
+    width: 93%;
+  } 
+  @media (max-width: 991px) {
+    width: 88%;
+  } 
+  @media (max-width: 767px) {
+    height: 65vh;
+  }
+  &::-webkit-scrollbar {
+    width: 0;
+  }
+  &::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  &::-webkit-scrollbar-thumb {
+    background-color: transparent;
+    border-radius:0;
+  }
+  .high-low-content {
+    margin-top: 248px;
+    padding-right: 20px;
+    @media (max-width: 767px) {
+      margin-top: 138px;
+    }
+   
+  }
+}
 }
 
 

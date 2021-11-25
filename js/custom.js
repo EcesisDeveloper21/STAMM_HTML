@@ -31,15 +31,12 @@ $(document).ready(function() {
 // Collections Page Js
 $('#tabs-collections li a').click(function(){
   var t1 = $(this).attr('id');
-
- 
   $(this).siblings('.close-item-collection').show();
   $(this).parent().siblings().find('.close-item-collection').hide();
   $(this).parent().siblings().hide();
- 
-  
   $('.container-demo-collections').hide();
   $('#'+ t1 + 'CO').fadeIn('slow');
+  $('#'+ t1 + 'CO').scrollTop(0);
 
 });
 // Hello Page Js
