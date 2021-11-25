@@ -1,9 +1,11 @@
 $(document).ready(function() {    
 
   // $('#tabs li a').addClass('inactive');
+  
   $('.container-demo').hide();
   $('.container-demo:first').show();
-      
+  $('.container-demo-collections').hide();
+      // Hello Page Js
   $('#tabs li a').click(function(){
       var t = $(this).attr('id');
     // if($(this).hasClass('inactive')){  
@@ -21,10 +23,26 @@ $(document).ready(function() {
       $('#'+ t + 'C').fadeIn('slow');
    
   });
+ 
   $('#tab1').click(function(){ 
     $('.hello').removeClass("mob-hello");
     $('.menu-hello').removeClass("mob-hellomenu");
 });
+// Collections Page Js
+$('#tabs-collections li a').click(function(){
+  var t1 = $(this).attr('id');
+
+ 
+  $(this).siblings('.close-item-collection').show();
+  $(this).parent().siblings().find('.close-item-collection').hide();
+  $(this).parent().siblings().hide();
+ 
+  
+  $('.container-demo-collections').hide();
+  $('#'+ t1 + 'CO').fadeIn('slow');
+
+});
+// Hello Page Js
   $('.close-item').click(function(){ 
     $(this).hide();
     $('.hello').hide();
@@ -32,6 +50,19 @@ $(document).ready(function() {
     $('.menu-hello').removeClass("mob-hellomenu");
     
   });
+  // CollectionsPage Js
+  $('.close-item-collection').click(function(){ 
+    $(this).hide();
+    
+    $('.container-demo-collections').hide();
+   
+
+    $(this).parent().siblings().show();
+ 
+   
+    
+  });
+  // Shope Page Js
   $('.white-bg').on('click', function(){
     var src = $(this).children().attr('src');  
     $('#destination').children('img').attr('src', src);
@@ -42,6 +73,7 @@ $(document).ready(function() {
     $('#destination').children('img').attr('src', src);
     $('.product-display').addClass("show");
 });
+// Product Page Js
 $('.icons').click(function(){ 
   $('.details-popup').addClass("show");
   $('.product-site').addClass("popup");
@@ -104,6 +136,8 @@ $('.close-product-size').click(function(e){
    $('.side-menu').removeClass("popup");
    $('.side-navmenu').removeClass("popup");
  });
+
+ 
   });
 
   // Loader
@@ -119,6 +153,7 @@ $(".loaded").animate({
 setTimeout(function(){
   $('.preloader-wrap').fadeOut(300);
 }, time);
+// Product Page button over Js
 $(document).ready(function(){
   $('input[type="checkbox"]').click(function(){
       if($(this).prop("checked") == true){

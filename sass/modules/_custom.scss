@@ -219,13 +219,16 @@ p {
 -moz-box-shadow:inset -2px -2px 0px #000000, inset -3px -3px 0px #808080, inset 1px 1px 0px #FFFFFF, inset 2px 2px 0px #DBDBDB;
 box-shadow: inset -2px -2px 0px #000000, inset -3px -3px 0px #808080, inset 1px 1px 0px #FFFFFF, inset 2px 2px 0px #DBDBDB;
 @media (max-width: 1600px) {
-  padding: 8px 50px;
+  padding: 8px 46px;
 }
 @media (max-width: 1200px) {
-  padding: 8px 40px;
+  padding: 8px 32px;
 }
 @media (max-width: 991px) {
-  padding: 8px 20px;
+  padding: 8px 17px;
+}
+@media (max-width: 800px) {
+  padding: 8px;
 }
 &:hover {
 background:  #F4F9FF;
@@ -310,7 +313,7 @@ PRELOADER STYLES
         height: 25vh;
         top: auto;
         bottom: 0;
-        left: 30%;
+        left: 20%;
       }
     }
     &::after {
@@ -324,7 +327,7 @@ PRELOADER STYLES
         height: 25vh;
         top: auto;
         bottom: 0;
-        right: 30%;
+        right: 20%;
       }
     }
    
@@ -1297,6 +1300,7 @@ left: 18%;
       }
     }
    
+   
   &.menu-hello {
     position: absolute;
     top: 30px;
@@ -1321,6 +1325,19 @@ left: 18%;
       }
     }
   }
+  &.menu-collections {
+    position: absolute;
+    top: 30px;
+    width: 100%;
+    border-top: 1px solid #000000;
+    
+    .close-item-collection {
+      position: absolute;
+      right: 20px;
+      z-index: 2;
+      display: none;
+    }
+  }
     li {
       
       &.tab-item {
@@ -1337,15 +1354,27 @@ left: 18%;
           width: 100%;
           display: block;
           background: #F4F9FF;
-          color: #000000;
+          color: $text-dark;
           font-family: $base-font;
           font-size: $base-font-size;
           line-height: 20px;
           text-transform: uppercase;
           padding: 20px;
+          @media (max-width: 1600px) {
+            font-size: 18px;
+            line-height: 18px;
+          }
+          @media (max-width: 1368px) {
+            font-size: 16px;
+            line-height: 16px;
+          }
           @media (max-width: 767px) {
             font-size: 11px;
             line-height: 11px;
+          }
+          span {
+            display: block;
+            text-transform: none;
           }
         }
         
@@ -1459,6 +1488,49 @@ left: 18%;
     }
   }
 }
+/*Collections Page Css */
+.collection-detail {
+  position: absolute;
+  top: 112px;
+  width: 100%;
+  @media (max-width: 1600px) {
+    top: 107px;
+  }
+ 
+  @media (max-width: 1200px) {
+    top: 104px;
+  }
+  @media (max-width: 767px) {
+    top: 93px;
+  }
+ 
+ text-align: center;
+  .container-demo-collections {
+    height: 68vh;
+    overflow-x: hidden;
+    overflow-y: auto;
+    @media (max-width: 767px) {
+      height: 85vh;
+    }
+    &::-webkit-scrollbar {
+      width: 0;
+    }
+    &::-webkit-scrollbar-track {
+      background: transparent;
+    }
+    &::-webkit-scrollbar-thumb {
+      background-color: transparent;
+      border-radius:0;
+    }
+    img {
+      margin-bottom: 20px;
+      @media (max-width: 767px) {
+        max-width: 245px;
+      }
+    }
+  }
+}
+
 /*Shop Page css */
 .products {
   position: absolute;
@@ -1718,14 +1790,12 @@ box-shadow: inset -2px -2px 0px #000000, inset -3px -3px 0px #808080, inset 1px 
   }
   .button-class {
     position: fixed;
-    bottom: 270px;
+    bottom:28vh;
     left: 50%;
     transform: translateX(-50%);
-    @media (max-width: 1600px) {
-      bottom: 270px;
-    }
+  
     @media (max-width: 1200px) {
-      bottom: 290px;
+      bottom: 32vh;
     }
     @media (max-width: 767px) {
       bottom: 200px;
